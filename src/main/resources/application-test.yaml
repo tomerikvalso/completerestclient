@@ -1,3 +1,0 @@
-logging:
-  level:
-    org.springframework: DEBUG # OBS! Ved INFO vil cxf logge payloads
