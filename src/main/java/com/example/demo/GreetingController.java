@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.concurrent.atomic.AtomicLong;
 
 @RestController
+@RequestMapping(path=("/api"), produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+
 public class GreetingController {
 
   private static final String template = "Hello, %s!";
@@ -22,7 +24,7 @@ public class GreetingController {
   }
 
   @PostMapping(path = "/postgreeting"  )
-  public Greeting2 greetingpost(  Greeting2 greeting) {
+  public Greeting2 greetingpost( @RequestBody  Greeting2 greeting) {
     System.out.println("postgreeting " + greeting);
     return greeting;
   }
