@@ -23,7 +23,7 @@ public class GreetingController {
     return gretting;
   }
 
-  @PostMapping(path = "/postgreeting"  )
+  @PostMapping(path = "/postgreeting" ,produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE )
   public Greeting2 greetingpost( @RequestBody  Greeting2 greeting) {
     System.out.println("postgreeting " + greeting);
     return greeting;
